@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block page_title %}Экспертизы{% endblock page_title %}
+{% block content %}
+<div class="regular-documents-container">
+    <div class="reg-docs-cont">
+        <div class="obr"><h1>Экспертизы</h1></div>
+        {% for document in documents %}
+            <div class="reg-docs-one-cont">
+                <a class="reg-docs-link" href="{% url 'exams-view' exam_id=document.id %}">{{ document.title }}</a>
+                <p>{{ document.created_at|date:'d.m.Y' }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

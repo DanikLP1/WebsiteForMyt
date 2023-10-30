@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block page_title %}Документы{% endblock page_title %}
+{% block content %}
+<div class="documents-main-">
+    <div class="obr"><h1>Главные Документы</h1></div>
+    <div class="documents-list">
+        {% for document in documents %}
+            <div class="main-document">
+                <a class="main-document-name" href="{% url 'document-view' document_id=document.id %}">{{document.title}}</a>
+                <p class="main-document-date">{{document.created_at|date:'d.m.Y'}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="obr"><h1>Документы СФК</h1></div>
+    <div class="SFK-list">
+        {% for document in documents_SFK %}
+            <div class="main-document">
+                <a class="main-document-name" href="{% url 'document-view' document_id=document.id %}">{{document.title}}</a>
+                <p class="main-document-date">{{document.created_at|date:'d.m.Y'}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="obr"><h1>Методические материалы</h1></div>
+    <div class="Metod-list">
+        {% for document in documents_metod %}
+            <div class="main-document">
+                <a class="main-document-name" href="{% url 'document-view' document_id=document.id %}">{{document.title}}</a>
+                <p class="main-document-date">{{document.created_at|date:'d.m.Y'}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content%}

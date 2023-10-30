@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block page_title %}Связь{% endblock page_title %}
+{% block content %}
+<div class="main-communication">
+
+    <!--контейнер двух блоков-->
+    <div id="y-c" class="yandex-mapper">
+
+        <!--Карта-->
+        <div id="m-c" class="map-class">
+            <div id="map"></div>
+        </div>
+        
+        <div id="m-b" class="map-blur">
+            <!-- контейнер столбца-->
+            <div class="contact-info">
+                <!-- столбец контакты -->
+                <div class="contact-info-2">
+                    <h1>Адресс:</h1>
+                    <div class="adres">
+                        <h1>Новомытищинский проспект, 30, Мытищи, Московская область, 141002</h1>
+                    </div>
+                </div>
+
+                <div class="contact-info-2">
+                    <h1>Часы работы:</h1>
+                    <div class="chas-roboti">
+                        <h1>Пн-Чт: 09:00 - 13:00, 13:45 - 18:00</h1>
+                        <h1>Пт: 08:00 - 13:00, 13:45 - 16:00</h1>
+                        <h1>Сб-Вс: Закрыто</h1>
+                    </div>
+                </div>
+                
+                <div class="contact-info-2">
+                    <h1>Телефон:</h1>
+                    <div class="telephone">
+                        <h1>+7(495) 583-09-45</h1>
+                    </div>
+                </div>
+                
+                <div class="contact-info-2">
+                    <h1>Почта:</h1>
+                    <div class="con-email">
+                        <h1>kspmmr@bk.ru</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

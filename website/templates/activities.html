@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}Деятельность{% endblock page_title %}
+{% block content %}
+<div class="activities-main-container">
+    <div class="obr"><h1>Деятельность</h1></div>
+    <div class="activities-container">
+        <div class="activity-list">
+            <a class="documents-link" href="{% url 'reports' %}">Годовые отчеты</a>
+            <!--<a class="documents-link" href="{% url 'control' %}">Контрольные мероприятия</a>
+            <a class="documents-link" href="{% url 'analytical' %}">Экспертно-аналитические мероприятия</a>-->
+            <a class="documents-link" href="{% url 'college' %}">Коллегия</a>
+            <a class="documents-link" href="{% url 'info' %}">Информация о заключенных соглашениях о взаимодействии</a>
+            <a class="documents-link" href="{% url 'statements' %}">Официальные выступления и заявления</a>
+            <a class="documents-link" href="{% url 'events' %}">Сведения о внесенных по итогам проведения контрольных и экспертно-аналитических мероприятий представлениях и предписаниях</a>
+            <a class="documents-link" href="{% url 'solutions' %}">Сведения о принятых по внесенным представлениям и предписаниям решениях и мерах</a>
+            <a class="documents-link" href="{% url 'plans' %}">План работы Контрольно-счетной палаты городского округа Мытищи Московской области</a>
+            <a class="documents-link" href="{% url 'publications' %}">Публикации в СМИ</a>
+            <a class="documents-link" href="{% url 'audit' %}">План внутреннего финансового аудита</a>
+        </div>
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block page_title %}О КСП{% endblock page_title %}
+{% load static %}
+{% block content %}
+<div class="about-main-container">
+    <div class="about-container">  
+        <div class="about-title">
+            <div class="obr"><h1>О Контрольно-счетной палате</h1></div>
+        </div>
+        <div class="about-foto-hello">
+            <div class="about-foto">
+                <div class="about-name">
+                    <p>Седойкин Павел Сергеевич</p>
+                </div>
+                <div class="about-foto-logo">
+                    <img class="logo-about" src="{% static 'img/about-foto2.jpg' %}">
+                </div>
+                <div class="about-dolznost">
+                    <p>Исполняющий обязанности председателя Контрольно-счетной палаты</p>
+                </div>
+            </div>
+            <div class="about-card-text">
+                <div class="about-text">   
+                    <p>Мы рады приветствовать Вас на официальном сайте Контрольно-счетной палаты городского округа Мытищи Московской области!
+
+                        Контрольно-счетная палата городского округа Мытищи Московской области является постоянно действующим органом внешнего муниципального финансового контроля и призвана осуществлять контроль за законным и эффективным использованием средств местного бюджета, контроль за соблюдением порядка управления и распределения муниципальным имуществом. Надеюсь, что наш сайт позволит Вам получать исчерпывающую информацию о нашей деятельности, расширит возможности по информационному взаимодействию с контрольно-счетными органами, с органами власти всех уровней, гражданским обществом.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="str-2">
+            <div class="inform">
+                <!-- столбец контакты -->
+                <div class="contact-inform-2">
+                    <h1>Адресс:</h1>
+                    <div class="adres-1">
+                        <h1>Новомытищинский проспект, 30, Мытищи, Московская область, 141002</h1>
+                    </div>
+                </div>
+    
+                <div class="contact-inform-2">
+                    <h1>Часы работы:</h1>
+                    <div class="chas-roboti-1">
+                        <h1>Пн-Чт: 09:00 - 13:00, 13:45 - 18:00</h1>
+                        <h1>Пт: 08:00 - 13:00, 13:45 - 16:00</h1>
+                        <h1>Сб-Вс: Закрыто</h1>
+                    </div>
+                </div>
+                
+                <div class="contact-inform-2">
+                    <h1>Телефон:</h1>
+                    <div class="telephone-1">
+                        <h1>+7(495) 583-09-45</h1>
+                    </div>
+                </div>
+                
+                <div class="contact-inform-2">
+                    <h1>Почта:</h1>
+                    <div class="con-email-1">
+                        <h1>kspmmr@bk.ru</h1>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="coop-ksp">
+                <div class="columns">
+                    <div class="stolb-1">
+                        <a href="https://mytyshi.ru/" target="_blank"><img class="coop-img" src="{% static 'img/admm.png' %}"></a>
+                    </div>
+                    <div class="stolb-2">
+                        <a href="https://epp.genproc.gov.ru/web/proc_50" target="_blank"><img class="coop-img" src="{% static 'img/ksp.png' %}"></a>
+                    </div>
+                    <div class="stolb-3">
+                        <a href="http://www.fsb.ru/fsb.htm" target="_blank"><img class="coop-img" src="{% static 'img/skso.png' %}"></a>
+                    </div>
+                    <div class="stolb-4">
+                        <a href="https://opmyt.ru/" target="_blank"><img class="coop-img" src="{% static 'img/agmo.jpg' %}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-links">
+            <div class="about-answers">
+                <a href="{% url 'managment' %}">Руководство</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'synopsis' %}">Сведения об использовании</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'structure' %}">Структура</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'ifs' %}">Условия и результаты конкурсов</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'about-plans' %}">План</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'procuroment' %}">Информация о закупах</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'tasks' %}" >Задачи</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'information' %}">Перечень информационных систем</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'stuffing' %}">Кадровое обеспечение</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'control' %}">Контрольные мероприятия</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'analytical' %}">Экспертно-аналитические мероприятия</a>
+            </div>
+            <div class="about-answers">
+                <a href="{% url 'about-exams' %}">Экспертизы</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Структура Контрольно-счетной палаты городского округа Мытищи Московской области{% endblock page_title %}
+{% block content %}
+<div class="tasks-main-container">
+    <div class="tasks-cont">
+        <div class="tasks-text">
+            <h3>Структура Контрольно-счетной палаты городского округа Мытищи Московской области</h3>
+            <embed src="{% static 'img/Struktura.pdf' %}">
+        </div>
+    </div>
+</div>
+{% endblock content %}

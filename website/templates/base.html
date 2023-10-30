@@ -1,0 +1,218 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block page_title %}{% endblock page_title %} - Контрольно-счетная палата городского округа Мытищи</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal&display=swap" rel="stylesheet">
+        <meta name="google" content="notranslate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:site_name" content="Контрольно-счетная палата городского округа Мытищи">
+        <meta property="og:url" content="https://kspmtr.ru/">
+        <meta property="og:image" content="{% static 'img/about-foto.jpeg' %}">
+        <meta property="og:image:width" content="968">
+        <meta property="og:image:height" content="504">
+        <meta itemprop="name" content="Контрольно-счетная палата городского округа Мытищи">
+        <meta itemprop="description" content="Сайт о деятельности и текущих делах КСП Мытищи">
+        <meta itemprop="image" content="{% static 'img/about-foto.jpeg' %}">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/feedback.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/ksp-cooperation.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/post_detail.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/all_news.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/connection.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/search_result_list.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/tasks.css'%}">
+        <link rel="stylesheet" href="{% static 'styles/documents.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/activities.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    </head>
+        <header class="masthead">
+            <div class="container">
+                <a class="foto" href="{% url 'about' %}"><div class = "foto">
+                    <img class = "logo" src="{% static 'img/logo.png' %}">
+                </div>
+                <div class="main-buttons">
+                    <a class="glav-button"  href="{% url 'about' %}">Контрольно-счетная палата городского округа Мытищи</a>
+                </div></a>
+            </div>
+        </header>
+    <body>
+        <main>
+            <div class="topnav" id="myTopnav">
+                <a href="javascript:void(0);" style="font-size:120%;" class="icon" onclick="myFunction()">&#9776;</a>
+                <form id="search-form" class="searchBox" action="{% url 'search' %}" method="get">
+                    <input id="search-input" class="searchInput" type="text" name="q" placeholder="Поиск">
+                    <div id="search-error"></div>
+                    <button id="search-button" class="searchButton" type="submit">
+                        <i class="fa fa-search">
+                        </i>
+                    </button>
+                </form>
+                <div id="top-links" class="topnav-links">
+                    <a id="news-link" href="{% url 'about' %}">О КСП</a>
+                    <a id="contact-link" href="{% url 'feedback_form' %}">Обращения</a>
+                    <div class="dropdown">
+                        <a class="dropbtn">Работа 
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'main_documents' %}">Главные документы</a>
+                            <a href="{% url 'docs_reg' %}">Нормативные акты</a>
+                            <a href="{% url 'activities' %}">Деятельность</a>
+                            <a href="{% url 'anti-corruption' %}">Противодействие коррупции</a>
+                        </div>
+                    </div> 
+                    <a id="home-link" href="{% url 'news' %}">Новости</a>
+                    <a id="last-child" href="{% url 'communication' %}">Связь</a>
+                </div>
+            </div>
+            {% block content %}
+            {% endblock content%}
+            <script>
+                function myFunction() {
+                var x = document.getElementById("myTopnav");
+                var x2 = document.getElementById("m-c");
+                var x3 = document.getElementById("y-c");
+                var x4 = document.getElementById("m-b");
+
+
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+                if(x2.className === "map-class"){
+                    x2.className += " resp";
+                }
+                else {
+                    x2.className = "map-class"
+                }
+
+                if(x3.className === "yandex-mapper"){
+                    x3.className += " respons";
+                }
+                else {
+                    x3.className = "yandex-mapper";
+                }
+
+                if(x4.className === "map-blur"){
+                    x4.className += " responsi";
+                }
+                else {
+                    x4.className = "map-blur";
+                }
+                }
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var activeTab = urlParams.get('tab');
+                    if (activeTab) {
+                        navLinks.forEach(function(link) {
+                            link.classList.remove('active');
+                        });
+                        document.getElementById(activeTab).classList.add('active');
+                        localStorage.setItem('active', activeTab);
+                    }
+                });
+
+                window.onload = function() {
+                    var activeLink = localStorage.getItem('active');
+                    if (activeLink) {
+                        document.getElementById(activeLink).classList.add('active');
+                    }
+                };
+
+                var navLinks = document.querySelectorAll('#top-links a');
+
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        navLinks.forEach(function(link) {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        localStorage.setItem('active', this.id);
+                    });
+                });
+
+                // Добавляем обработчик события для изменения активной вкладки при вводе ссылки на вкладку
+                
+                var searchForm = document.querySelector('#search-form');
+
+                // Найти поле поиска
+                var searchInput = document.querySelector('#search-input');
+
+                // Найти элемент для вывода сообщения об ошибке
+                var errorElement = document.querySelector('#search-error');
+
+                // Добавить обработчик события submit для формы поиска
+                searchForm.addEventListener('submit', function(event) {
+                    // Проверить, было ли введено значение в поле поиска
+                    if (!searchInput.value.trim()) {
+                        // Если значение не было введено, отменить отправку формы
+                        event.preventDefault();
+                        // Отобразить сообщение об ошибке
+                        errorElement.innerHTML = '';
+                    } else {
+                        // Если значение было введено, очистить сообщение об ошибке
+                        errorElement.innerHTML = '';
+                    }
+                });
+
+            </script>
+            <script type="text/javascript">
+                var map;
+    
+                DG.then(function () {
+                    map = DG.map('map', {
+                        center: [55.911961068841215,37.73852149999993],
+                        zoom: 17
+                    });
+    
+                    DG.marker([55.911961068841215,37.73852149999993]).addTo(map).bindPopup('Контрольно-счетная палата городского округа Мытищи!');
+                });
+            </script>
+        </main>
+    </body>
+    <footer>
+        <div class="footer-main-container">
+            <div class="footer-row">
+                <div class="footer-name">
+                    <div class = "foto-footer">
+                        <img class = "logo-footer" src="{% static 'img/logo.png' %}">
+                    </div>
+                    <div class="f-c">
+                        <h3>Контрольно-счетная палата</h5>
+                        <h4>городского округа Мытищи</h6>
+                    </div>
+                </div>
+                <div class="footer-contacts-1">
+                    <div class="footer-row-icon">
+                        <img class="footer-icon" src="{% static 'img/geo.png' %}">
+                        <a class="map-link" target="_blank" href="https://yandex.ru/maps/10740/mytischi/house/novomytishchinskiy_prospekt_30/Z04YcQRoTEcFQFtvfXVwcHVlZQ==/?ll=37.738522%2C55.911961&z=17.13">1411002 , Московская область, г.Мытищи, Новомытищинский пр-кт, 30/1</a>
+                    </div>
+                </div>
+                <div class="footer-contacts-2">
+                    <div class="footer-row-icon">
+                        <img class="footer-icon" src="{% static 'img/phone.png' %}">
+                        <a>+7(495) 583-09-45</a>
+                    </div>
+                    <div class="footer-row-icon">
+                        <img class="footer-icon" src="{% static 'img/gmail.png' %}">
+                        <a>kspmmr@bk.ru</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+</html>

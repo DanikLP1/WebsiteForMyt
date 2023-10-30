@@ -1,0 +1,81 @@
+.container-post{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.colomn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.govno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body-post{
+    align-items: center;
+    margin: 3% 2% 3% 6.5%;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+    background-color: white;
+    width: 60%;
+    height: 100%;
+}
+
+.post-detail-image{
+    display: block;
+    width: 70%;
+    height: auto;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+.govno-2{
+    width: auto;
+    height: 100%;
+    padding: 2%;
+}
+
+/*----------------------------------*/
+.text-muted-post{
+    text-align: end;
+}
+
+.card-text-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 150%;
+}
+
+.card-body-post h1{
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+
+.govno-2 p{
+    padding-bottom: 2%;
+    white-space: pre-line;
+}
+
+@media screen and (max-width: 600px){
+
+    .card-body-post{
+        width: 85%;
+        margin: 4%;
+    }
+
+    .card-body-post h1{
+        font-size: 90%;
+    }
+
+    .card-text-post{
+        font-size: 90%;
+    }
+}

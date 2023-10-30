@@ -1,0 +1,176 @@
+.main-communication{
+    margin-bottom: 5%;
+}
+
+.yandex-mapper{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    height: 80%;
+    margin: 3%;
+}
+
+.map-blur{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(119, 144, 148);
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+    align-items: center;
+    width: 20%;
+    height: 94%;
+}
+/*Контейнер контактов------------------------------------------------------------*/
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.contact-info-2{
+    font-size: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+    color: white;
+}
+
+.contact-info-2:last-child{
+    border:none;
+}
+.adres, .chas-roboti, .telephone, .con-email{
+    color: #0b3f53;
+}
+
+.adres{
+    padding-left: 10%;
+}
+/*Карта--------------------------------------------------------------------------*/
+.map-class{
+    width: 50%;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+}
+
+img[src*="2gis"],
+img[class*="dg-"] {
+    image-rendering: pixelated;
+    -webkit-image-rendering: -webkit-optimize-contrast;
+    -moz-image-rendering: -moz-crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+/*Адаптация----------------------------------------------------------------------*/
+@media screen and (max-width: 1440px){
+    .map-blur{
+        width: 30%;
+    }
+
+    #map{
+
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .map-blur{
+        width: 40%;
+    }
+    
+    #map{
+        height: 580px
+    }
+
+
+}
+
+@media screen and (max-width: 768px){
+    .responsi{
+        height: 70% !important;
+    }
+
+    .resp{
+        height: 70%;
+        display: none !important;
+    }
+
+    .map-blur{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 10%;
+    }
+    #map{
+        height: 520px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    
+    .responsi{
+        height: 50% !important;
+    }
+
+    .respons{
+        justify-content: start !important;
+
+    }
+
+    .resp{
+        height: 0 !important;
+        display: none !important;
+    }
+
+    .yandex-mapper{
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
+    }
+    .map-blur{
+        width: 80%;
+        height: 50%;
+        margin-bottom: 5%;
+        justify-content: center;
+    }
+    .contact-info{
+        height: 90%;
+    }
+    .contact-info-2{
+        font-size: 30%;
+    }
+    .map-class{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 2% 0 2% 0;
+    }
+    #map{
+        width: 80%;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    
+}
+
+@media screen and (max-width: 375px){
+    
+}
+
+@media screen and (max-width: 320px){
+    .yandex-mapper{
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
+    }
+}

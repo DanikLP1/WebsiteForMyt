@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif ,sans-serif;
+    
+}
+
+body{
+  background-color: #e9e7ff;
+}
+
+.masthead{
+    display: flex;
+    flex-direction: row;
+    background: #2d2a5b;
+    height: auto;
+    padding-bottom: 1%;
+    box-shadow: 0 6px 18px #c9cdd0;
+    padding-top: 1%;
+    box-shadow: 0 0 5px 2px;
+}
+
+.glav-button{
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    font-size: 160%;
+    color: white;
+    margin-left: 10px;
+}
+
+.glav-button-1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 130%;
+    color: white;
+}
+
+.main-buttons{
+  display:flex;
+  margin-left: 2%;
+}
+
+.foto{
+    display: flex;
+    flex-grow: 1;
+    width: 5px;
+    margin-right: 4%;
+    padding-right: 50px;
+}
+
+.foto-logo {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px;
+  box-shadow:inset 5px;
+}
+
+.navbar .navlink {
+  float: left;
+  font-size: 120%;
+  color: #c9cdd0;
+  text-align: center;
+  padding: 14px 155px;
+  text-decoration: none;
+  border-right: 1px solid #bbb;
+}
+
+.navlink:last-child{
+  border-right: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 120%;  
+  border: none;
+  outline: none;
+  color: #c9cdd0;
+  padding: 14px 130px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: #2d2a5b;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 344px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(11, 11, 11);
+  padding: 12px 60px;
+  text-decoration: none;
+  display: block;
+  text-align:start;
+  font-size: 120%;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer .footer-container{
+  background-color: #2d2a5b;
+}

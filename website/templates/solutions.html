@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_title %}Сведения о принятых по внесенным представлениям и предписаниям решениях и мерах{% endblock page_title %}
+{% block content %}
+<div class="regular-documents-container">
+    <div class="reg-docs-cont">
+        <div class="obr"><h1>Сведения о принятых по внесенным представлениям и предписаниям решениях и мерах</h1></div>
+        {% for document in documents %}
+            <div class="reg-docs-one-cont">
+                <a class="reg-docs-link" href="{% url 'activities-view' activities_id=document.id %}">{{ document.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

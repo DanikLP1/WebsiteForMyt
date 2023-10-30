@@ -1,0 +1,62 @@
+.tasks-main-container{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tasks-cont{
+    width: 85%;
+    height: 100%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+}
+
+.tasks-text{
+    font-size: 150%;
+    padding: 2%;
+    line-height: 160%;
+}
+
+.tasks-text p{
+    margin-bottom: 1%;
+}
+
+table{
+    width: 100%;
+    margin-top: 2%;
+    font-size: 90%;
+}
+
+.tasks-text th, td{
+    padding: 1%;
+    border: 2px solid black;
+}
+
+.tasks-text embed{
+    width: 100%;
+    height: 700;
+}
+
+.tasks-text a{
+    text-decoration: none;
+    color:rgb(53, 53, 53);
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+@media screen and (max-width: 600px){
+    .tasks-text{
+        font-size: 100%;
+        overflow-x: auto;
+    }
+
+    table{
+        width: 100%;
+        margin-top: 2%;
+        font-size: 90%;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block page_title %}Главная{% endblock page_title %}
+{% block content %}
+{% load static %}
+<div class="main-news">
+    <!--Левый столбец постов -->
+    <div class="news-container">
+        <div class="news-detail-container">
+            {% for post in posts_before_latest %}
+            <div class="news-container-first">
+                <div class="news-image">
+                    <a href="{% url 'post_detail' post.slug  %}"><img class="card-image" src="{{ post.cover.url }}"></a>
+                </div>
+                <div class="news-card-body">
+                    <h2 class="news-card-title">{{ post.title|truncatechars:30 }}</h2>
+                    <p class="news-card-text">{{ post.content|truncatechars:55 }}</p>
+                    <p class="post-card-time">{{post.created_on|date:'d.m.Y'}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+    </div>
+    <!--Конец левого столбеца постов -->
+
+    <!--Главный(последний) пост -->
+    <div class="post-conatiner">
+        <div class="obr"><h1>Последние Новости</h1></div>
+        <div class="post-detail-container">
+            <div class="card-container">
+                <div class="cont-image">
+                    <a class="main-card-image" href="{% url 'post_detail' latest_post.slug  %}"><img class="main-card-image" src="{{ latest_post.cover.url }}"></a>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ latest_post.title }}</h2>
+                    <p class="card-text">{{ latest_post.content|truncatewords:25 }}</p>
+                    <p class="post-card-time">{{post.created_on|date:'d.m.Y'}}</p>
+                </div>
+            </div>    
+        </div>
+        <div class="all-news-button">
+            <a href="{% url 'all_posts' %}">Все новости</a>
+        </div>
+    </div>
+    <!--Конец главного(последнего) поста -->
+
+    <!--Правый столбец постов -->
+    <div class="news-container-right">
+        <div class="news-detail-container-right">
+            {% for post in posts_5_to_10 %}
+            <div class="news-container-first-right">
+                <div class="news-image-right">
+                    <a href="{% url 'post_detail' post.slug  %}"><img class="card-image-right" src="{{ post.cover.url }}"></a>
+                </div>
+                <div class="news-card-body-right">
+                    <h2 class="news-card-title-right">{{ post.title|truncatechars:30 }}</h2>
+                    <p class="news-card-text-right">{{ post.content|truncatechars:55 }}</p>
+                    <p class="post-card-time">{{post.created_on|date:'d.m.Y'}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+    </div>
+</div>
+
+<div class="ksp-cooperation ">
+    <div class="word">
+        <h1>Сотрудничество</h1>
+    </div>
+    <div class="coop-row">
+        <li class="cooperation">
+            <div class="coop-button">
+                <a href="https://mytyshi.ru/" target="_blank"><img class="coop-img" src="{% static 'img/admm.png' %}"></a>
+            </div>
+            <div class="coop-button">
+                <a href="https://epp.genproc.gov.ru/web/proc_50" target="_blank"><img class="coop-img" src="{% static 'img/ksp.png' %}"></a>
+            </div>
+            <div class="coop-button">
+                <a href="http://www.fsb.ru/fsb.htm" target="_blank"><img class="coop-img" src="{% static 'img/skso.png' %}"></a>
+            </div>
+            <div class="coop-button">
+                <a href="https://opmyt.ru/" target="_blank"><img class="coop-img" src="{% static 'img/agmo.jpg' %}"></a>
+            </div>
+        </li>
+    </div>
+</div>
+{% endblock content %}

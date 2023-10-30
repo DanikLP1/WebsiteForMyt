@@ -1,0 +1,224 @@
+.feed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.feedback-main-container{
+    display: inline-table;
+    margin: 8%;
+    width: 40%;
+    height: auto;
+}
+
+/*1----------------------------------------------------------------------------------------------------------------------*/
+.feedback-container{
+    display: flex;
+    flex-direction: column;
+    color: #707070;
+    padding: 2%;
+    overflow: auto;
+    background-color: #fff;
+    border: dashed 1px #777777;
+    border-radius: 2.5%;
+    box-shadow: 0px 0px 0px 5px #f7f7f7, 0px 0px 2px 7px #bbb, 0px 0px 5px 5px #f7f7f7 inset;
+}
+
+.feedback-container-border{
+    padding: 2%;
+}
+
+.container-text{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+
+}
+
+.contactList{
+    display: flex;
+    flex-direction: column;
+}
+.contact-1{
+    padding: 1% 1% 1% 1%;
+}
+
+.contact-2, .contact-3{
+    padding: 1% 1% 1% 0;
+}
+
+#id_subject{
+    background-color: #fafafa;
+    border: solid 2px rgba(155, 155, 219, 0.7);
+    padding: 5px 30px;
+    width: 90%;
+    border-radius: 40px;
+    box-shadow:0 0 4px rgba(155, 155, 219, 0.8);
+    transition: .3s box-shadow;
+}
+
+#id_subject:hover{
+    box-shadow:0 0 8px rgba(155, 155, 219, 1);
+}
+
+#id_email{
+    background-color: #fafafa;
+    border: solid 2px rgba(155, 155, 219, 0.7);
+    padding: 5px 30px;
+    width: 90%;
+    border-radius: 40px;
+    box-shadow:0 0 4px rgba(155, 155, 219, 0.8);
+    transition: .3s box-shadow;
+}
+
+#id_email:hover{
+    box-shadow:0 0 8px rgba(155, 155, 219, 1);
+}
+
+#id_content{
+    background-color: #fafafa;
+    border: solid 2px rgba(155, 155, 219, 0.7);
+    padding: 16px 30px;
+    box-sizing: border-box;
+    width: 90%;
+    border-radius: 40px;
+    box-shadow:0 0 4px rgba(155, 155, 219, 0.8);
+    transition: .3s box-shadow;
+}
+
+#id_content:hover{
+    box-shadow:0 0 8px rgba(155, 155, 219, 1);
+}
+
+.g-recaptcha{
+    display: flex;
+    justify-content: center;
+}
+
+.send-button{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
+.button{
+    font-size: 130%;
+    border-radius: 10px;
+    border-color: #07166d;
+    padding: 2% 20%;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #07166d inset, 0 0 0 0 #07166d;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.button:hover{
+    box-shadow: 0 0 3px 0 #07166d inset, 0 0 10px 0.5px #07166d;
+    color:#000000;
+}
+
+/*2------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.feedbacks-container-pols{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4% 4%;
+}
+
+.feedbacks-detail-container{
+    width: 100%;
+}
+
+.feedback-container-2{
+    border-style: solid;
+    border-color: rgb(221, 221, 224);
+    background-color: white;
+    margin: 5%;
+    padding: 2% 4% 2% 4%;
+    box-shadow: 0 5px 5px #afafaf, 0 5px 5px #afafaf, 0 5px 5px #afafaf;
+}
+
+.feedback-card-title{
+    border-bottom: 2px solid #cdd5ff;
+}
+
+.obr{
+    display: flex;
+    border-bottom: 4px solid black;
+    justify-content: center;
+    background-color: #000000;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+
+@media screen and (max-width: 600px){
+    .feed{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feedback-main-container{
+        margin: 5%;
+    }
+
+    .feedbacks-detail-container{
+        width: 100%;
+    }
+
+    #id_content{
+        box-sizing: border-box;
+        width: 70%;
+        border-radius: 10%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .feedback-main-container{
+        display: inline-table;
+        margin: 8%;
+        width: 75%;
+        height: auto;
+    }
+    
+
+    .feed{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feedback-main-container{
+        margin: 5%;
+    }
+
+    .feedbacks-detail-container{
+        width: 100%;
+    }
+
+    #id_content{
+        box-sizing: border-box;
+        width: 70%;
+        border-radius: 10%;
+    }
+    .obr{
+        font-size: 80%;
+    }
+}
+
+.feedback-card-texr{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

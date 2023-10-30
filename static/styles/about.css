@@ -1,0 +1,207 @@
+.about-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+}
+.about-foto-hello{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.about-foto-logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+    
+}
+
+.about-foto{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10%;
+    width: 20%;
+    height: 30%;
+    font-size: 120%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.about-dolznost{
+    display: flex;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+    padding-left: 10%;
+    padding-right: 1%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.logo-about{
+    width: 70%;
+    height: 80%;
+    border-radius: 7%;
+    box-shadow: 0 5px 5px #afafaf, 0 1px 5px #afafaf, 0 5px 5px #afafaf;
+}
+
+.about-name{
+    font-size: 170%;
+    display: flex;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+}
+
+.about-card-text{
+    width: 35%;
+    height: 100%;
+    font-size: 170%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 10%;
+}
+
+.about-text{
+    padding: 4%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+}
+
+.about-links{
+    font-size: 150%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 3%;
+}
+
+.about-answers{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+    margin: 1.2%;
+    padding: 1%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(224, 221, 221);
+}
+
+.about-answers a{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px){
+
+    .about-foto-hello{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 70%;
+    }
+
+    .about-foto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: auto;
+        margin: 2%;
+    }
+
+    .about-card-text{
+        width: auto;
+        margin: 2%;
+    }
+
+    .about-links{
+        margin: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        color: black;
+        background-color: rgb(40, 90, 102);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .about-foto-hello{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 100%;
+    }
+
+    .about-name{
+        width: 80%;
+        text-align: center;
+        display: block;
+    }
+
+    .about-foto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        margin: 2%;
+    }
+
+    .about-dolznost{
+        width: 88%;
+        text-align: center;
+        display: block;
+        font-size: 140%;
+        padding-left: 5.5%;
+        padding-right: 5.5%;
+    }
+
+    .about-card-text{
+        width: 90%;
+        margin: 2%;
+        font-size: 140% !important;
+    }
+
+    .about-links{
+        margin: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        color: black;
+        background-color: rgb(40, 90, 102);
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .about-main-container{
+        font-size: 80%;
+    }
+
+    .about-card-text{
+        font-size: 128.89%;
+    }
+}

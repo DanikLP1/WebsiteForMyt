@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block page_title %}{{ object.title }}{% endblock page_title %}
+{% block content %}
+<div class="container-post">
+    <div class="colomn">
+        <div class="govno">
+            <div class="card-body-post">
+                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                <img class="post-detail-image" src="{{ post.cover.url }}">
+                <div class="govno-2">
+                    <p class="card-text-post">{{ object.content|safe }}</p>
+                    <p class="text-muted-post">{{post.created_on|date:'d E Y'}} {{post.created_on|time:"H:i"}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

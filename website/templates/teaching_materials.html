@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_title %}Методические материалы{% endblock page_title %}
+{% block content %}
+<div class="regular-documents-container">
+    <div class="reg-docs-cont">
+        <div class="obr"><h1>Методические материалы</h1></div>
+        {% for document in documents %}
+            <div class="reg-docs-one-cont">
+                <a class="reg-docs-link" href="{% url 'anti_corruption-view' anti_corruption_id=document.id %}">{{ document.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

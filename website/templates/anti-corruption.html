@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block page_title %}Противодействие коррупции{% endblock page_title %}
+{% block content %}
+<div class="regular-documents-container">
+    <div class="reg-docs-cont">
+        <div class="obr"><h1>Противодействие коррупции</h1></div>
+        <div class="reg-docs-one-cont">
+            <a class="reg-docs-link" href="{% url 'expertise' %}">Антикоррупционная экспертиза</a>
+        </div>
+        {% for document in documents %}
+            <div class="reg-docs-one-cont">
+                <a class="reg-docs-link" href="{% url 'anti_corruption-view' anti_corruption_id=document.id %}">{{ document.title }}</a>
+            </div>
+        {% endfor %}
+        <div class="reg-docs-one-cont">
+            <a class="reg-docs-link" href="{% url 'materials' %}">Методические материалы</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

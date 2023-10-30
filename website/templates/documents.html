@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %}Документы{% endblock page_title %}
+{% block content %}
+<div class="documents-main-container">
+    <div clas="document-container">
+        <div class="documents-list">
+            <a class="documents-link" href="{% url 'main_documents' %}">Главные документы</a>
+            <a class="documents-link" href="{% url 'docs_reg' %}">Нормативные правовые акты</a>
+        </div>
+    </div>
+</div>
+{% endblock content%}

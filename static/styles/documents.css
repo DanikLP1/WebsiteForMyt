@@ -1,0 +1,73 @@
+.regular-documents-container{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+}
+
+.reg-docs-cont{
+    width: 60%;
+}
+
+.reg-docs-link{
+    text-decoration: none;
+    color:rgb(53, 53, 53);
+    font-weight: bold;
+}
+
+.reg-docs-one-cont{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-style: solid;
+    border-color: rgb(221, 221, 224);
+    background-color: white;
+    padding: 2% 4% 2% 4%;
+    box-shadow: 0 5px 5px #afafaf, 0 5px 5px #afafaf, 0 5px 5px #afafaf;
+} 
+
+.documents-main-{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.documents-list, .SFK-list, .Metod-list{
+    width: 60%;
+}
+
+.main-document{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-style: solid;
+    border-color: rgb(221, 221, 224);
+    background-color: white;
+    padding: 2% 4% 2% 4%;
+    box-shadow: 0 5px 5px #afafaf, 0 5px 5px #afafaf, 0 5px 5px #afafaf;
+}
+
+.main-document-name{
+    text-decoration: none;
+    color:rgb(53, 53, 53);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px){
+
+    .main-document{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border-radius: 5px;
+    }
+
+    .reg-docs-one-cont{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border-radius: 5px;
+    }
+}

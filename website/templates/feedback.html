@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block page_title %}Обратная связь{% endblock page_title %}
+{% block content %}
+<div class="feed">
+
+    <div class="feedback-main-container">
+        <div class="feedback-container">
+            <div class="feedback-container-border">
+                <div class="container-text">
+                    <h1>Обратная связь</h1>
+                </div>
+                <h4>Если у вас есть какие-либо вопросы, то можете заполнить форму ниже:</h4>
+                
+                <form method="post" action="{% url 'feedback_form' %}"> 
+                    {% csrf_token %} 
+                    <div class="contactList"> 
+                        <a id="subject" class="contact-1"> Тема: {{ form.subject }}</a> 
+                        <a id="email" class="contact-2"> Email: {{ form.email }}</a> 
+                        <a id="message" class="contact-3"> Текст: {{ form.content }}</a> 
+                    </div> 
+
+                    <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+
+                    <div class="g-recaptcha" data-sitekey="{{recaptcha_site_key}}"></div> 
+
+                    <div class="send-button"> 
+                        <button class="button" type="submit">Отправить &rarr;</button> 
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedbacks-container-pols">
+        <div class="obr">
+            <h1>Обращения пользователей</h1>
+        </div>
+
+        <div class="feedbacks-detail-container" id="feedback-list">
+            {% for feedback in feedback_list %}
+                <div class="feedback-container-2 feedback-item">
+                    <div class="feedback-card-body">
+                        <h4 class="feedback-card-title">{{ feedback.email }}</h4>
+                        <p class="feedback-card-subject">{{ feedback.subject }}</p>
+                        <p class="feedback-card-text">{{ feedback.content }}</p>
+                        <h4 class="feedback-card-title">Ответ КСП:</h4>
+                        {% if feedback.answer %}
+                            <p class="feedback-card-text">{{ feedback.answer }}</p>
+                        {% else %}
+                            <p class="feedback-card-text">Ответа пока нет!</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="send-button">
+            <button class="button" id="load-more">Загрузить еще</button>
+        </div>
+    </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    let start = {{ feedback_list|length }};
+    $('#load-more').on('click', function() {
+        $.ajax({
+            url: '/feedback/load-more/',
+            data: {'start': start},
+            success: function(data) {
+                if (data.feedback_list.length > 0) {
+                    for (let feedback of data.feedback_list) {
+                        let feedbackHtml = '';
+                        feedbackHtml += '<div class="feedback-container-2 feedback-item">';
+                        feedbackHtml += '<div class="feedback-card-body">';
+                        feedbackHtml += '<h4 class="feedback-card-title">'+feedback.email+'</h4>';
+                        feedbackHtml += '<p class="feedback-card-subject">'+feedback.subject+'</p>';
+                        feedbackHtml += '<p class="feedback-card-text">'+feedback.content+'</p>';
+                        feedbackHtml += '<h4 class="feedback-card-title">Ответ КСП:</h4>';
+                        if (feedback.answer) {
+                            feedbackHtml += '<p class="feedback-card-text">'+feedback.answer+'</p>';
+                        } else {
+                            feedbackHtml += '<p class="feedback-card-text">Ответа пока нет!</p>';
+                        }
+                        feedbackHtml += '</div></div>';
+                        $('#feedback-list').append(feedbackHtml);
+                    }
+                    start += data.feedback_list.length;
+                } else {
+                    $('#load-more').hide();
+                    $('#feedback-list').append('<h4 class="container-text" >Обращений больше нет.</h4>');
+                }
+            }
+        })
+    })
+});
+</script>
+{% endblock content %}
